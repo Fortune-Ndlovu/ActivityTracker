@@ -14,7 +14,7 @@ The HTML is very simple I just have a form and a table underneath so when the us
 There is very little CSS because my main mission was the functionality using JavaScript. 
 
 ### JavaScript
-I have broken down the functionality into three simple stages.
+I have broken down the functionality into 3 simple stages.
 
 #### Stage 1 
 I declared an empty array named sessions for storing objects that will be named session.
@@ -39,6 +39,10 @@ The for loop is adding a new row into the end of theTableBody one row at a time,
 The for loop  works by: 
 Inserting a new row at the end of theTableBody, inside the new row we create 4 cells counting form 0, each individual cell is assigned the user input from the last session object inside the sessions array. The 4th cell just includes a delete button which is used to delete the current row.
 
+Note this generateTable function gets called in the anonymous function that is being assigned when theSubmitButton is clicked.
+
 #### Stage 3
+At this point when theSubmitButton is clicked valuable user inputs generate into theTableBody, to make things interesting when the user clicks the headings of table, the row will sort based on the heading being clicked. e.g if the user clicks Session button the rows will sort alphabetically or the Distance button the rows will sort numerically ect.
+The sorting works pretty similar for all headings. When the heading button is clicked we assign as anonymous function which is sorting the sessions object using the sort() function, note: we are also calling the generateTable function inside this annoymous function as reference of the last row created.
 
 
