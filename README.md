@@ -8,7 +8,7 @@ After the user has entered, Date of Activity, Activity Type, Start Time & End Ti
 I used Bootstrap to make the interface look really nice and mostly because my main mission was the functionality using JavaScript. 
 
 ### HTML
-The HTML is very simple I just have a form and a table underneath so when the user submits the form their input is generated into the table.
+The HTML is very simple I just have a form and an empty table underneath so when the user submits the form their input is generated into the table.
 
 ### CSS
 There is very little CSS because my main mission was the functionality using JavaScript. 
