@@ -33,13 +33,13 @@ Lastly I am calling a generateTable function.
 
 #### Stage 2
 I created a generateTable function that is being assigned an object. 
-Within this object I am tageting theTableBody and inserting new table rows using a for loop.
+Within this object I am targeting theTableBody and inserting new table rows using a for loop.
 The for loop is adding a new row into the end of theTableBody one row at a time, this new row is based on the last session object in side the sessions array.
 
 The for loop  works by: 
-Inserting a new row at the end of theTableBody, inside the new row we create 4 cells counting form 0, each individual cell is assigned the user input from the last session object inside the sessions array. The 4th cell just includes a delete button which is used to delete the current row.
+Inserting a new row at the end of theTableBody, inside the new row we create 4 cells counting up form 0, each individual cell is assigned the user input from the last session object inside the sessions array. The 4th cell just includes a delete button which is used to delete the current row.
 
-Note this generateTable function gets called in the anonymous function that is being assigned when theSubmitButton is clicked.
+Note: This generateTable function gets called in the anonymous function that is being assigned when theSubmitButton is clicked, it is also called when sorting occurs as reference of the last object created.
 
 #### Stage 3
 At this point when theSubmitButton is clicked valuable user inputs generate into theTableBody, to make things interesting when the user clicks the headings of table, the row will sort based on the heading being clicked. e.g if the user clicks Session button the rows will sort alphabetically or the Distance button the rows will sort numerically ect.
