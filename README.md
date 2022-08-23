@@ -45,4 +45,7 @@ Note this generateTable function gets called in the anonymous function that is b
 At this point when theSubmitButton is clicked valuable user inputs generate into theTableBody, to make things interesting when the user clicks the headings of table, the row will sort based on the heading being clicked. e.g if the user clicks Session button the rows will sort alphabetically or the Distance button the rows will sort numerically ect.
 The sorting works pretty similar for all headings. When the heading button is clicked we assign as anonymous function which is sorting the sessions object using the sort() function, note: we are also calling the generateTable function inside this annoymous function as reference of the last row created.
 
+### Conclusion
+Every interesting thing happens when theSubmitButton is clicked. We assigned values to an object, push that object to an array, call a generateTable function that is generating a new row with cells that have their own unique user value. We are also sorting the all of the rows when the table headings are clicked.
 
+##### This all happens just with one click of a button, I really like JavaScript becacuse it opens the door of anything is possible. 
