@@ -27,9 +27,18 @@ After each input was stored in its own unique variable I then assigned those var
 
 The session object stores the user input by property value, I pushed the session object into the sessions array. Now the sessions array has the session object that has each individual variable that stores the users input value.
 
-Also inside the anonymous function is another anonymous function for removing individual rows that we will mention is stage 2
+Also inside the anonymous function is another anonymous function for removing individual rows that I will mention is stage 2
 
-Lastly we are calling a generateTable function.
+Lastly I am calling a generateTable function.
 
 #### Stage 2
-I created a generateTable function that is being assigned an object.  
+I created a generateTable function that is being assigned an object. 
+Within this object I am tageting theTableBody and inserting new table rows using a for loop.
+The for loop is adding a new row into the end of theTableBody one row at a time, this new row is based on the last session object in side the sessions array.
+
+The for loop  works by: 
+Inserting a new row at the end of theTableBody, inside the new row we create 4 cells counting form 0, each individual cell is assigned the user input from the last session object inside the sessions array. The 4th cell just includes a delete button which is used to delete the current row.
+
+#### Stage 3
+
+
