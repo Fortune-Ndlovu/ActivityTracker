@@ -31,7 +31,6 @@ document.getElementById("theSubmitButton").onclick = function () { //when theSub
         }
     });
     generateTable(); //calling the generateTable function
-
 }
 
 function generateTable() { //creating a function that will generate table rows when theSubmitButton is clicked 
@@ -96,7 +95,6 @@ function sortByDate(a, b) {  //sorting our date
 document.getElementById("theDuration").addEventListener('click', function () { //when theDuration is clicked pass an anonymous function to it
     sessions.sort(sortByDuration);
     generateTable();
-
 });
 function sortByDuration(a, b) {//sorting our Duration
     return a.theTime - b.theTime;
