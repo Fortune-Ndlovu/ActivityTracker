@@ -4,21 +4,12 @@ document.getElementById("theSubmitButton").onclick = function () {
   //when theSubmitButton is clicked, we pass anonymous function
   let session = {}; //declaring an empty object that will store the user input values
 
-  let theEndTime = document.getElementById("theEndTime").value; //returning the users input within the document while assigning it to a variable we are also declaring
-  let theStartTime = document.getElementById("theStartTime").value;
-
-  let date0 = new Date("01-01-1970 " + theEndTime + ":00"); //creating a new date object, within its parenthesis respresenting milliseconds since,
-  let date1 = new Date("01-01-1970 " + theStartTime + ":00"); //...january 1970 UTC plus user input plus ':00'
-
-  let theTotalTime = Math.abs(date0 - date1); //returning the absolute value of the number assigning to variable we are also declaring...
-  let theFinalTime = theTotalTime / 1000 / 60; //...dividing that by 1000 milliseconds and 60 minutes while assigning to a variable we are also declaring
-  let theTime = theFinalTime; //assigning to a variable we are also declaring
-
   //assigning user input values to our created property that is a property of our object
   session.theDateActivity = document.getElementById("theDateActivity").value;
-  session.theTime = theTime;
   session.theActivityType = document.getElementById("theActivityType").value;
   session.theDistance = document.getElementById("theDistance").value;
+  session.theStartTime = document.getElementById("theStartTime").value;
+  session.theEndTime = document.getElementById("theEndTime").value;
 
   sessions.push(session); //pushing our object into our array
   console.log("Our sessions globally: ", sessions);
@@ -43,12 +34,27 @@ function generateTable() {
     let cel5 = newRow.insertCell(4);
     //adding values to our cells
     cel1.innerHTML = sessions[i].theDateActivity;
-    cel2.innerHTML = sessions[i].theTime;
+    cel2.innerHTML = calculateDuration(
+      sessions[i].theStartTime,
+      sessions[i].theEndTime
+    );
     cel3.innerHTML = sessions[i].theActivityType;
     cel4.innerHTML = sessions[i].theDistance;
     cel5.innerHTML =
       "<button id='deleteButton' class='btn btn-outline-primary';>&#215;</button>";
   }
+}
+
+/**
+ * The function creates two Date objects with the same date (January 1st, 1970) but different times based on the parameters.
+ * Then it calculates the difference between the two Date objects in milliseconds and converts it to minutes.
+ * The function returns the duration in minutes as a number. For example, if startTime is “10:00” and endTime is “11:15”, the function will return 75.
+ */
+function calculateDuration(startTime, endTime) {
+  let startDate = new Date("1970-01-01T" + startTime + ":00");
+  let endDate = new Date("1970-01-01T" + endTime + ":00");
+  let durationInMinutes = (endDate - startDate) / (1000 * 60);
+  return durationInMinutes;
 }
 
 //When our deleteButton is clicked remove our row
