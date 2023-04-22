@@ -135,7 +135,10 @@ document.getElementById("theDuration").addEventListener("click", function () {
   sessions.sort(sortByDuration);
   generateTable();
 });
+
+// calculating the duration for each session using the calculateDuration function and then sorting the sessions by that value
 function sortByDuration(a, b) {
-  //sorting our Duration
-  return a.theTime - b.theTime;
+  let durationA = calculateDuration(a.theStartTime, a.theEndTime);
+  let durationB = calculateDuration(b.theStartTime, b.theEndTime);
+  return durationA - durationB;
 }
